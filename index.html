@@ -4,18 +4,18 @@
     <title>SICCAPE</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="/dist/tailwindcss/index.global.js"></script>
-    <script defer src="/dist/alpinejs/cdn.min.js"></script>
-    <link rel="stylesheet" href="/style/typo.css">
+    <script src="./dist/tailwindcss/index.global.js"></script>
+    <script defer src="./dist/alpinejs/cdn.min.js"></script>
+    <link rel="stylesheet" href="./style/typo.css">
   </head>
   <body class="relative">
-    <div x-data="{ content: '' }" x-init="fetch('src/sections/header.html').then(response => response.text()).then(html => content = html)" x-html="content"></div>
-    <div x-data="{ content: '' }" x-init="fetch('src/sections/hero.html').then(response => response.text()).then(html => content = html)" x-html="content"></div>
-    <div x-data="{ content: '' }" x-init="fetch('src/sections/dashboard.html').then(response => response.text()).then(html => content = html)" x-html="content"></div>
-    <div x-data="{ content: '' }" x-init="fetch('src/sections/cards.html').then(response => response.text()).then(html => content = html)" x-html="content"></div>
-    <div x-data="{ content: '' }" x-init="fetch('src/sections/faq.html').then(response => response.text()).then(html => content = html)" x-html="content"></div>
-    <div x-data="{ content: '' }" x-init="fetch('src/sections/team.html').then(response => response.text()).then(html => content = html)" x-html="content"></div>
-    <div x-data="{ content: '' }" x-init="fetch('src/sections/contact.html').then(response => response.text()).then(html => content = html)" x-html="content"></div>
-    <div x-data="{ content: '' }" x-init="fetch('src/sections/footer.html').then(response => response.text()).then(html => content = html)" x-html="content"></div>
+    <div x-data="{ content: '' }" x-init="fetch('./src/sections/header.html').then(response => response.text()).then(html => content = html)" x-html="content"></div>
+    <div x-data="{ content: '' }" x-init="fetch('./src/sections/hero.html').then(response => response.text()).then(html => content = html)" x-html="content"></div>
+    <div x-data="{ content: '' }" x-init="fetch('./src/sections/dashboard.html').then(response => response.text()).then(html => content = html)" x-html="content"></div>
+    <div x-data="{ content: '' }" x-init="fetch('./src/sections/cards.html').then(response => response.text()).then(html => content = html)" x-html="content"></div>
+    <div x-data="{ content: '' }" x-init="fetch('./src/sections/faq.html').then(response => response.text()).then(html => content = html)" x-html="content"></div>
+    <div x-data="{ content: '' }" x-init="fetch('./src/sections/team.html').then(response => response.text()).then(html => content = html)" x-html="content"></div>
+    <div x-data="{ content: '' }" x-init="fetch('./src/sections/contact.html').then(response => response.text()).then(html => content = html)" x-html="content"></div>
+    <div x-data="{ content: '' }" x-init="fetch('./src/sections/footer.html').then(response => response.text()).then(html => content = html)" x-html="content"></div>
   </body>
 </html>
