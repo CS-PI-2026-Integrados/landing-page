@@ -1,0 +1,21 @@
+{
+  "title": "Tudo que você precisa está aqui.",
+  "card": [
+    {
+      "title": "Geração de comprovantes instantâneos",
+      "description": "O sistema faz a captura instantânea para anexá-lo aos comprovantes de fé do comparecimento."
+    },
+    {
+      "title": "Gestão de documentos",
+      "description": "Organize e armazene seus documentos de forma segura e sem complicações."
+    },
+    {
+      "title": "Controle de horas e serviços comunitários",
+      "description": "Faça o controle de horas e serviços comunitários."
+    },
+    {
+      "title": "Segurança e rastreabilidade",
+      "description": "Torne o seu sistema mais seguro e a prova de fraudes, com um robusto registro de ações."
+    }
+  ]
+}

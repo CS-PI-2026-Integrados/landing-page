@@ -1,64 +1,75 @@
-<section class="w-full max-w-7xl mx-auto px-6 py-20">
-    <!-- principal title -->
-    <h2 class="serif text-5xl md:text-6xl text-black mb-16 leading-tight">
-        Tudo que você precisa está aqui.
+<section class="w-full max-w-7xl mx-auto px-6 py-20" x-data="{ 
+        cards: [],
+        async loadCards() {
+            try {
+                const response = await fetch('src/data/cards.json');
+                this.cards = await response.json();
+            } catch (error) {
+                console.error('Erro ao carregar CARDs:', error);
+            }
+        }
+    }" x-init="loadCards()">
+
+    <h2 class="serif text-5xl md:text-6xl text-black mb-16 leading-tight" x-text="cards.title">
     </h2>
 
-    <!-- card grid-->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        <!-- card 1 : green card -->
         <div
             class="group bg-[#0F682E] p-8 md:p-10 min-h-[250px] flex flex-col justify-between transition-transform hover:-translate-y-1 duration-300">
             <div>
                 <div class="text-white mb-6">
                     <span class="material-symbols-outlined text-5xl">photo_camera</span>
                 </div>
-                <h3 class="text-white font-bold text-xl mb-3">Geração de comprovantes instantâneos</h3>
-                <p class="text-green-100 text-sm leading-relaxed max-w-sm">
-                    O sistema faz a captura instantânea para anexá-lo aos comprovantes de fé do comparecimento.
+                    <h3 class="text-white font-bold text-xl mb-3" x-text="cards.card[0].title">
+                </h3>
+                <p class="text-green-100 text-sm leading-relaxed max-w-sm"
+                    x-text="cards.card[0].description">
                 </p>
             </div>
         </div>
 
-        <!-- card 2 : black card -->
         <div
             class="group bg-black p-8 md:p-10 min-h-[250px] flex flex-col justify-between transition-transform hover:-translate-y-1 duration-300">
             <div>
                 <div class="text-white mb-6">
                     <span class="material-symbols-outlined text-5xl">folder_open</span>
                 </div>
-                <h3 class="text-white font-bold text-xl mb-3">Gestão de documentos</h3>
-                <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
-                    Organize e armazene seus documentos de forma segura e sem complicações.
+                <h3 class="text-white font-bold text-xl mb-3"
+                    x-text="cards.card[0].title">
+                </h3>
+                <p class="text-gray-400 text-sm leading-relaxed max-w-sm"
+                    x-text="cards.card[1].description">
                 </p>
             </div>
         </div>
 
-        <!-- card 3 :  silver card -->
         <div
             class="group bg-[#BFBFBF] p-8 md:p-10 min-h-[250px] flex flex-col justify-between transition-transform hover:-translate-y-1 duration-300">
             <div>
                 <div class="text-black mb-6">
                     <span class="material-symbols-outlined text-5xl">update</span>
                 </div>
-                <h3 class="text-black font-bold text-xl mb-3">Controle de horas e serviços comunitários</h3>
-                <p class="text-gray-800 text-sm leading-relaxed max-w-sm">
-                    Faça o controle de horas e serviços comunitários.
+                <h3 class="text-black font-bold text-xl mb-3"
+                    x-text="cards.card[2].title">
+                </h3>
+                <p class="text-gray-800 text-sm leading-relaxed max-w-sm"
+                    x-text="cards.card[2].description">
                 </p>
             </div>
         </div>
 
-        <!-- card 4 : white card -->
         <div
             class="group bg-white border border-gray-300 p-8 md:p-10 min-h-[250px] flex flex-col justify-between transition-transform hover:-translate-y-1 duration-300">
             <div>
                 <div class="text-black mb-6">
                     <span class="material-symbols-outlined text-5xl">deployed_code</span>
                 </div>
-                <h3 class="text-black font-bold text-xl mb-3">Segurança e rastreabilidade</h3>
-                <p class="text-gray-600 text-sm leading-relaxed max-w-sm">
-                    Torne o seu sistema mais seguro e a prova de fraudes, com um robusto registro de ações.
+                <h3 class="text-black font-bold text-xl mb-3"
+                    x-text="cards.card[3].title">
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed max-w-sm"
+                    x-text="cards.card[3].description">
                 </p>
             </div>
         </div>
