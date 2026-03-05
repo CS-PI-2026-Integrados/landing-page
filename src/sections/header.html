@@ -6,6 +6,11 @@
             </span>
             <div class="ms-auto flex gap-2 items-center">
                 <div class="gap-2 hidden sm:flex">
+                    <button onclick="changeFontSize(2)" class="cursor-pointer hover:backdrop-blur-lg hover:bg-neutral-900/50 flex hover:scale-95 transition rounded-lg px-3 py-2 text-white">A+</button>
+                    <button onclick="changeFontSize(-2)" class="cursor-pointer hover:backdrop-blur-lg hover:bg-neutral-900/50 flex hover:scale-95 transition rounded-lg px-3 py-2 text-white">A-</button>
+                    <button @click="highContrast = !highContrast" x-bind:class="highContrast ? 'bg-neutral-900/50' : ''" class="cursor-pointer hover:backdrop-blur-lg hover:bg-neutral-900/50 flex hover:scale-95 transition rounded-lg px-3 py-2 text-white">
+                        <i class="fa-solid fa-circle-half-stroke m-auto"></i>
+                    </button>
                     <a href="#hero" class="hover:backdrop-blur-lg hover:bg-neutral-900/50 flex hover:scale-95 transition rounded-lg px-3 py-2 text-white">Home</a>
                     <a href="#about" class="hover:backdrop-blur-lg hover:bg-neutral-900/50 flex hover:scale-95 transition rounded-lg px-3 py-2 text-white">Sobre</a>
                     <a href="#faq" class="hover:backdrop-blur-lg hover:bg-neutral-900/50 flex hover:scale-95 transition rounded-lg px-3 py-2 text-white">FAQ</a>
