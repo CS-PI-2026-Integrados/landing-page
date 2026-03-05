@@ -1,15 +1,15 @@
-<header id="navbar" class="border-gray-500/40 flex-col px-4 py-2 end-0 fixed w-full transition flex duration-500">
+<header id="navbar" class="z-10 flex-col px-4 py-2 end-0 fixed w-full transition flex duration-500">
     <div x-data="{open: false}" class="flex container mx-auto flex-col gap-2">
         <div class="flex">
-            <span class="text-green-800 flex my-auto">
-                <span class="font-extrabold">SIC</span><span class="font-medium">APE</span>
+            <span id="logo" class="text-[var(--green)] flex my-auto text-2xl">
+                <span class="font-bold logo">SIC</span><span class="font-regular logo">APE</span>
             </span>
             <div class="ms-auto flex gap-2 items-center">
                 <div class="gap-2 hidden sm:flex">
-                    <a href="#hero" class="hover:backdrop-blur-lg hover:bg-neutral-900/50 flex hover:scale-95 transition rounded px-2 py-1 text-sm text-white">Home</a>
-                    <a href="#about" class="hover:backdrop-blur-lg hover:bg-neutral-900/50 flex hover:scale-95 transition rounded px-2 py-1 text-sm text-white">Sobre</a>
-                    <a href="#faq" class="hover:backdrop-blur-lg hover:bg-neutral-900/50 flex hover:scale-95 transition rounded px-2 py-1 text-sm text-white">FAQ</a>
-                    <a href="#contact" class="flex bg-green-700 hover:scale-95 hover:bg-green-800 transition rounded px-2 py-1 text-sm text-white">Contate-nos</a>
+                    <a href="#hero" class="hover:backdrop-blur-lg hover:bg-neutral-900/50 flex hover:scale-95 transition rounded-lg px-3 py-2 text-white">Home</a>
+                    <a href="#about" class="hover:backdrop-blur-lg hover:bg-neutral-900/50 flex hover:scale-95 transition rounded-lg px-3 py-2 text-white">Sobre</a>
+                    <a href="#faq" class="hover:backdrop-blur-lg hover:bg-neutral-900/50 flex hover:scale-95 transition rounded-lg px-3 py-2 text-white">FAQ</a>
+                    <a href="#contact" class="flex bg-[var(--green)] hover:scale-95 hover:bg-green-800 transition rounded-lg px-3 py-2 text-white">Contate-nos</a>
                 </div>
                 <button @click="open = !open" class="sm:hidden text-white px-2 py-1 hover:bg-neutral-900/50 cursor-pointer transition rounded-lg">
                     <i class="fa fa-bars"></i>
@@ -17,10 +17,10 @@
             </div>
         </div>
         <div class="bg-neutral-900/50 p-3 rounded-lg text-white backdrop-blur-lg sm:hidden" x-transition x-show="open">
-            <a href="#hero" class="flex hover:scale-98 transition rounded-lg px-2 py-1 text-sm text-white">Home</a>
-            <a href="#about" class="flex hover:scale-98 transition rounded-lg px-2 py-1 text-sm text-white">Sobre</a>
-            <a href="#faq" class="flex hover:scale-98 transition rounded-lg px-2 py-1 text-sm text-white">FAQ</a>
-            <a href="#contact" class="flex bg-green-700 hover:scale-98 hover:bg-green-800 transition rounded px-2 py-1 text-sm text-white">Contate-nos</a>
+            <a href="#hero" class="flex hover:scale-98 transition rounded-lg px-2 py-1 text-white">Home</a>
+            <a href="#about" class="flex hover:scale-98 transition rounded-lg px-2 py-1 text-white">Sobre</a>
+            <a href="#faq" class="flex hover:scale-98 transition rounded-lg px-2 py-1 text-white">FAQ</a>
+            <a href="#contact" class="flex bg-[var(--green)] hover:brightness-90 hover:scale-98 transition rounded px-2 py-1 text-white">Contate-nos</a>
         </div>
     </div>
 </header>

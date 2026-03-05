@@ -1,7 +1,9 @@
 
 @font-face {
   font-family: 'Instrument Sans';
-  src: url('/assets/fonts/InstrumentSans/InstrumentSans-Regular.ttf') format('truetype'), url('/assets/fonts/InstrumentSans/InstrumentSans-Italic.ttf') format('truetype');
+  src:
+    url('/assets/fonts/InstrumentSans/InstrumentSans-Regular.ttf') format('truetype'),
+    url('/assets/fonts/InstrumentSans/InstrumentSans-Italic.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -9,16 +11,33 @@
 
 @font-face {
   font-family: 'Instrument Serif';
-  src: url('/assets/fonts/InstrumentSerif/InstrumentSerif-Regular.ttf') format('truetype'), url('/assets/fonts/InstrumentSerif/InstrumentSerif-Italic.ttf') format('truetype');
+  src:
+    url('/assets/fonts/InstrumentSerif/InstrumentSerif-Regular.ttf') format('truetype'),
+    url('/assets/fonts/InstrumentSerif/InstrumentSerif-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Blinker';
+  src:
+    url('/assets/fonts/Blinker/Blinker-Regular.ttf') format('truetype'),
+    url('/assets/fonts/Blinker/Blinker-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 * {
-    font-family: "Instrument Sans", sans-serif;
+  font-family: "Instrument Sans", sans-serif;
 }
 
 .serif {
-    font-family: "Instrument Serif", sans-serif;
+  font-family: "Instrument Serif", sans-serif;
+}
+
+.logo {
+  font-family: "Blinker", sans-serif;
 }
