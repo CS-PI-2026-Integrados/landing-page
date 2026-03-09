@@ -1,3 +1,144 @@
-<div class="container mx-auto bg-zinc-300 h-dvh" id="#contact">
-    <h1 class="text-6xl">CONTACT</h1>
+<div class="container mx-auto" id="#contact">
+    <section id="contact-section" class="flex justify-center h-full">
+        <div class="p-20 w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div class="flex flex-col">
+                <h1 class="text-5xl mb-12 serif">Contate-nos</h1>
+                <div id="contatos" class="flex flex-col gap-4">
+                    <div class="flex flex-row items-center gap-4">
+                        <img src="./assets/icon/email.svg" alt="Email" class="w-6 h-6">
+                        <span>contato@sicape.com</span>
+                    </div>
+                    <div class="flex flex-row items-center gap-4">
+                        <img src="./assets/icon/location-pointer.svg" alt="Localização" class="w-6 h-6">
+                        <span>Rua José Felipe Tequinha, 1400 - Jardim das Nacoes, Paranavaí - PR</span>
+                    </div>
+                    <div class="flex flex-row items-center gap-4">
+                        <img src="./assets/icon/linkedin.svg" alt="Linkedin" class="w-6 h-6">
+                        <a href="https://linkedin.com/company/sicapepenal/">Sicape</a>
+                    </div>
+                    <div class="flex flex-row items-center gap-4">
+                        <img src="./assets/icon/github.svg" alt="Linkedin" class="w-6 h-6">
+                        <a href="https://linkedin.com/company/sicapepenal/">Integrados</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col min-h-[500px]" x-data="{
+    name: '',
+    email: '',
+    message: '',
+    terms: false,
+    loading: false,
+    sent: false,
+    errors: { name: false, email: false, message: false, terms: false },
+    msgs: { name: '', email: '', message: '', terms: '' },
+    submitForm() {
+        let isValid = true;
+        this.errors = { name: false, email: false, message: false, terms: false };
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (this.name.trim() === '') { 
+            this.errors.name = true; 
+            this.msgs.name = 'O campo nome é obrigatório'; 
+            isValid = false; 
+        }
+        if (!emailRegex.test(this.email)) { 
+            this.errors.email = true; 
+            this.msgs.email = 'Digite um e-mail válido'; 
+            isValid = false; 
+        }
+        if (this.message.trim() === '') { 
+            this.errors.message = true; 
+            this.msgs.message = 'A mensagem não pode ser vazia'; 
+            isValid = false; 
+        }
+        if (!this.terms) { 
+            this.errors.terms = true; 
+            this.msgs.terms = 'Você precisa aceitar os termos'; 
+            isValid = false; 
+        }
+
+        if (!isValid) return;
+
+        this.loading = true;
+        const form = this.$refs.form;
+        
+        fetch('https://formsubmit.co/ajax/contato@sicape.com', { 
+            method: 'POST',
+            body: new FormData(form)
+        })
+        .then(response => {
+            this.loading = false;
+            this.sent = true; 
+            form.reset();
+        })
+        .catch(error => {
+            this.loading = false;
+            alert('Erro ao enviar. Verifique sua conexão.');
+        });
+    }
+}">
+                <form x-show="!sent" x-ref="form" @submit.prevent="submitForm()" class="flex flex-col gap-4 w-full">
+                    <input type="hidden" name="_subject" value="Novo contato Site Sicape">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
+                    <div>
+                        <label for="name" class="block text-gray-700 mb-1">Nome</label>
+                        <input x-model="name" :class="{'border-red-500': errors.name}"
+                            class="bg-transparent w-full border border-zinc-400 h-10 px-4 py-3 rounded-none" id="name"
+                            type="text" name="name">
+                        <span x-show="errors.name" x-text="msgs.name" class="text-red-500 text-sm mt-1 block"></span>
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-gray-700 mb-1">E-mail</label>
+                        <input x-model="email" :class="{'border-red-500': errors.email}"
+                            class="bg-transparent w-full border border-zinc-400 h-10 px-4 py-3 rounded-none" id="email"
+                            type="email" name="email">
+                        <span x-show="errors.email" x-text="msgs.email" class="text-red-500 text-sm mt-1 block"></span>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-gray-700 mb-1">Mensagem</label>
+                        <textarea x-model="message" :class="{'border-red-500': errors.message}"
+                            class="bg-transparent w-full border border-zinc-400 p-2 h-32 px-4 py-3 rounded-none"
+                            id="message" name="message"></textarea>
+                        <span x-show="errors.message" x-text="msgs.message"
+                            class="text-red-500 text-sm mt-1 block"></span>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-2">
+                            <input x-model="terms" class="bg-transparent" id="term-check" type="checkbox">
+                            <label for="term-check" class="text-gray-700">Eu aceito os termos</label>
+                        </div>
+                        <span x-show="errors.terms" x-text="msgs.terms" class="text-red-500 text-sm mt-1"></span>
+                    </div>
+
+                    <button type="submit" :disabled="loading"
+                        class="bg-[#00B050] hover:bg-green-700 text-white font-medium py-3 px-8 self-start rounded transition disabled:opacity-50 flex items-center gap-2 mt-2">
+                        <span x-show="!loading">Enviar</span>
+                        <span x-show="loading">Enviando...</span>
+                    </button>
+                </form>
+
+                <div x-show="sent" style="display: none;"
+                    class="flex flex-col items-center justify-start w-full h-full pt-10 text-center space-y-4">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-2">
+                        <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800">Mensagem Enviada!</h3>
+                    <p class="text-gray-600 max-w-md">Obrigado pelo contato. Responderemos em breve.</p>
+                    <button @click="sent = false" class="text-green-600 font-medium hover:underline mt-6">
+                        Enviar outra mensagem
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
