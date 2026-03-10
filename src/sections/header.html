@@ -1,9 +1,10 @@
 <header id="navbar" class="z-10 flex-col px-4 py-2 end-0 fixed w-full transition flex duration-500">
     <div x-data="{open: false}" class="flex container mx-auto flex-col gap-2">
         <div class="flex">
-            <span id="logo" class="text-[var(--green)] flex my-auto text-2xl">
-                <span class="font-bold logo">SIC</span><span class="font-regular logo">APE</span>
-            </span>
+           <a id="logo" href="#hero" class="text-[var(--green)] flex my-auto text-2xl">
+                <span class="font-bold logo">SIC</span>
+                <span class="font-regular logo">APE</span>
+            </a>
             <div class="ms-auto flex gap-2 items-center">
                 <div class="gap-2 hidden sm:flex">
                     <button onclick="changeFontSize(2)" class="cursor-pointer hover:backdrop-blur-lg hover:bg-neutral-900/50 flex hover:scale-95 transition rounded-lg px-3 py-2 text-white">A+</button>
