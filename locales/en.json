@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "title": "SICAPE - Sentence Management",
+    "description": "Paperless and bureaucracy-free sentence management."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "title": "Paperless and bureaucracy-free sentence management",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+    "btn_more": "Learn more",
+    "btn_contact": "Contact us"
+  },
+  "about": {
+    "title": "Fraud-proof, in favor of your judicial district.",
+    "p1": "Attendance management and alternative sentencing in municipal courthouses no longer need to depend on slow manual processes vulnerable to fraud.",
+    "p2": "Through real-time integrated biometric photo capture and instant generation of PDF receipts with official certification, we guarantee the identity of the compliant individual and optimize time and effort for you and your team."
+  },
+  "features": {
+    "title": "Everything you need is here.",
+    "cards": [
+      {
+        "title": "Instant receipt generation",
+        "description": "The system performs instant capture to attach it to the certified attendance receipts."
+      },
+      {
+        "title": "Document management",
+        "description": "Organize and store your documents securely and without complications."
+      },
+      {
+        "title": "Community service and hours control",
+        "description": "Keep track of hours and community services."
+      },
+      {
+        "title": "Security and traceability",
+        "description": "Make your system more secure and fraud-proof with a robust action log."
+      }
+    ]
+  },
+  "team": {
+    "title": "Commitment and innovation: meet our team.",
+    "subtitle": "We are a team dedicated to transforming complex ideas into simple and efficient digital solutions.",
+    "roles": {
+      "po": "Product Owner",
+      "sm": "Scrum Master",
+      "dev": "Developer"
+    }
+  },
+  "faq": {
+    "title": "FAQs",
+    "questions": [
+      {
+        "q": "How does the system guarantee the identity of those attending the courthouse?",
+        "a": "The system features real-time integrated photo capture. The photo is linked to the individual's ID (CPF) with a timestamp at the exact moment of attendance, preventing fraud and replacing the insecure use of loose files."
+      },
+      {
+        "q": "Are the legal proceedings, photos, and registration data secure?",
+        "a": "Yes. The system operates in an encrypted cloud environment and strictly follows data protection guidelines (LGPD). In addition, it features an audit log engine that records exactly who accessed, altered, or generated any document."
+      },
+      {
+        "q": "How does the issuance of attendance receipts work?",
+        "a": "The issuance is 100% automated. Upon registering attendance, the system instantly generates a PDF receipt containing the official letterhead, the photo taken at that moment, and the procedural data. This document is saved in the cloud and can be printed or consulted at any time."
+      },
+      {
+        "q": "Does the system allow tracking community service hours?",
+        "a": "Yes. We have a dedicated module for managing alternative sentences. It is possible to assign the individual to partner institutions, log completed hours, and the system automatically calculates the remaining balance, issuing alerts in case of non-compliance."
+      },
+      {
+        "q": "Can my judicial district customize the system with our visual identity?",
+        "a": "Absolutely. The platform allows customization (White-Label), meaning each courthouse or municipality can configure its own coat of arms, logo, and official header texts for document generation."
+      },
+      {
+        "q": "Is it necessary to install any specific hardware or application on the front desk computers?",
+        "a": "No. The system runs directly in the web browser and uses the computer's own webcam or a standard tablet/smartphone camera to perform photographic records, without the need for complex plugins."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact us",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "terms": "I accept the terms and conditions",
+      "submit": "Send",
+      "submitting": "Sending..."
+    },
+    "errors": {
+      "name": "The name field is required",
+      "email": "Please enter a valid email address",
+      "message": "The message cannot be empty",
+      "terms": "You must accept the terms",
+      "network": "Failed to send. Please check your connection."
+    },
+    "success": {
+      "title": "Message Sent!",
+      "desc": "Thank you for contacting us. We will reply shortly.",
+      "btn": "Send another message"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

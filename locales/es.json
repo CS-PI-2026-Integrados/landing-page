@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "title": "SICAPE - Gestión de Penas",
+    "description": "Gestión de penas sin papel y sin burocracia."
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "faq": "FAQ",
+    "contact": "Contáctenos"
+  },
+  "hero": {
+    "title": "Gestión de penas sin papel y sin burocracia",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+    "btn_more": "Saber más",
+    "btn_contact": "Contáctenos"
+  },
+  "about": {
+    "title": "A prueba de fraudes, a favor de su distrito judicial.",
+    "p1": "La gestión de asistencia y penas alternativas en los juzgados municipales ya no necesita depender de procesos manuales lentos y vulnerables a fraudes.",
+    "p2": "A través de la captura fotográfica biométrica integrada en tiempo real y la generación instantánea de comprobantes en PDF con fe pública, garantizamos la identidad del cumplidor y optimizamos tiempo y esfuerzo para usted y su equipo."
+  },
+  "features": {
+    "title": "Todo lo que necesitas está aquí.",
+    "cards": [
+      {
+        "title": "Generación de comprobantes instantáneos",
+        "description": "El sistema realiza captura instantánea para adjuntarla a los comprobantes de fe de asistencia."
+      },
+      {
+        "title": "Gestión de documentos",
+        "description": "Organiza y almacena tus documentos de forma segura y sin complicaciones."
+      },
+      {
+        "title": "Control de horas y servicios comunitarios",
+        "description": "Lleva el control de horas y servicios comunitarios."
+      },
+      {
+        "title": "Seguridad y trazabilidad",
+        "description": "Haz que tu sistema sea más seguro y a prueba de fraudes, con un robusto registro de acciones."
+      }
+    ]
+  },
+  "team": {
+    "title": "Compromiso e innovación: conoce a nuestro equipo.",
+    "subtitle": "Somos un equipo dedicado a transformar ideas complejas en soluciones digitales simples y eficientes.",
+    "roles": {
+      "po": "Product Owner",
+      "sm": "Scrum Master",
+      "dev": "Desarrollador"
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "questions": [
+      {
+        "q": "¿Cómo garantiza el sistema la identidad de quienes asisten al juzgado?",
+        "a": "El sistema cuenta con captura fotográfica integrada en tiempo real. La foto se vincula al documento de identidad (CPF) del cumplidor con registro de fecha y hora en el momento de la atención, impidiendo fraudes y sustituyendo el uso inseguro de archivos sueltos."
+      },
+      {
+        "q": "¿Están seguros los datos de los procesos, fotos y registros?",
+        "a": "Sí. El sistema opera en un entorno de nube encriptado y sigue rigurosamente las directrices de protección de datos (LGPD). Además, cuenta con un motor de auditoría de registros que documenta exactamente quién accedió, alteró o generó cualquier documento."
+      },
+      {
+        "q": "¿Cómo funciona la emisión de los comprobantes de asistencia?",
+        "a": "La emisión es 100% automatizada. Al registrar la presencia, el sistema genera instantáneamente un comprobante en PDF que contiene el membrete oficial, la foto del momento y los datos procesales. Este documento se guarda en la nube y puede ser impreso o consultado en cualquier momento."
+      },
+      {
+        "q": "¿El sistema permite el control de horas de servicio comunitario?",
+        "a": "Sí. Contamos con un módulo dedicado a la gestión de penas alternativas. Es posible asignar al individuo a instituciones asociadas, registrar las horas cumplidas y el sistema calcula automáticamente el saldo restante, emitiendo alertas en caso de incumplimiento."
+      },
+      {
+        "q": "¿Mi distrito judicial puede personalizar el sistema con nuestra identidad visual?",
+        "a": "Por supuesto. La plataforma permite la personalización (White-Label), donde cada juzgado o ayuntamiento puede configurar su propio escudo, logotipo y textos de encabezado oficiales para la generación de los documentos."
+      },
+      {
+        "q": "¿Es necesario instalar algún hardware o aplicación específica en los ordenadores del mostrador?",
+        "a": "No. El sistema funciona directamente en el navegador web y utiliza la propia cámara web del ordenador o la cámara de un dispositivo móvil estándar para realizar los registros fotográficos, sin necesidad de plugins complejos."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+      "terms": "Acepto los términos",
+      "submit": "Enviar",
+      "submitting": "Enviando..."
+    },
+    "errors": {
+      "name": "El campo nombre es obligatorio",
+      "email": "Por favor, introduzca un correo electrónico válido",
+      "message": "El mensaje no puede estar vacío",
+      "terms": "Debe aceptar los términos",
+      "network": "Error al enviar. Verifique su conexión."
+    },
+    "success": {
+      "title": "¡Mensaje Enviado!",
+      "desc": "Gracias por contactarnos. Le responderemos en breve.",
+      "btn": "Enviar otro mensaje"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  }
+}
