@@ -89,7 +89,7 @@
                         <input x-model="name" :class="{'border-red-500': errors.name}"
                             class="bg-transparent w-full border border-zinc-400 h-10 px-4 py-3 rounded-none" id="name"
                             type="text" name="name">
-                        <span x-show="errors.name" x-text="msgs.name" class="text-red-500 text-sm mt-1 block"></span>
+                        <span aria-live="polite" x-show="errors.name" x-text="msgs.name" class="text-red-500 text-sm mt-1 block"></span>
                     </div>
 
                     <div>
@@ -97,7 +97,7 @@
                         <input x-model="email" :class="{'border-red-500': errors.email}"
                             class="bg-transparent w-full border border-zinc-400 h-10 px-4 py-3 rounded-none" id="email"
                             type="email" name="email">
-                        <span x-show="errors.email" x-text="msgs.email" class="text-red-500 text-sm mt-1 block"></span>
+                        <span aria-live="polite" x-show="errors.email" x-text="msgs.email" class="text-red-500 text-sm mt-1 block"></span>
                     </div>
 
                     <div>
@@ -105,7 +105,7 @@
                         <textarea x-model="message" :class="{'border-red-500': errors.message}"
                             class="bg-transparent w-full border border-zinc-400 p-2 h-32 px-4 py-3 rounded-none"
                             id="message" name="message"></textarea>
-                        <span x-show="errors.message" x-text="msgs.message"
+                        <span aria-live="polite" x-show="errors.message" x-text="msgs.message"
                             class="text-red-500 text-sm mt-1 block"></span>
                     </div>
 
@@ -114,7 +114,7 @@
                             <input x-model="terms" class="bg-transparent" id="term-check" type="checkbox">
                             <label for="term-check" class="text-gray-700">Eu aceito os termos</label>
                         </div>
-                        <span x-show="errors.terms" x-text="msgs.terms" class="text-red-500 text-sm mt-1"></span>
+                        <span aria-live="polite" x-show="errors.terms" x-text="msgs.terms" class="text-red-500 text-sm mt-1"></span>
                     </div>
 
                     <button type="submit" :disabled="loading"
