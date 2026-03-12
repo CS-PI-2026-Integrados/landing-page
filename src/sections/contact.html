@@ -25,65 +25,65 @@
             </div>
 
             <div class="flex flex-col min-h-[500px]" x-data="{
-    name: '',
-    email: '',
-    message: '',
-    terms: false,
-    loading: false,
-    sent: false,
-    errors: { name: false, email: false, message: false, terms: false },
-    msgs: { name: '', email: '', message: '', terms: '' },
-    submitForm() {
-        let isValid = true;
-        this.errors = { name: false, email: false, message: false, terms: false };
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                name: '',
+                email: '',
+                message: '',
+                terms: false,
+                loading: false,
+                sent: false,
+                errors: { name: false, email: false, message: false, terms: false },
+                msgs: { name: '', email: '', message: '', terms: '' },
+                submitForm() {
+                    let isValid = true;
+                    this.errors = { name: false, email: false, message: false, terms: false };
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        if (this.name.trim() === '') { 
-            this.errors.name = true; 
-            this.msgs.name = 'O campo nome é obrigatório'; 
-            isValid = false; 
-        }
-        if (!emailRegex.test(this.email)) { 
-            this.errors.email = true; 
-            this.msgs.email = 'Digite um e-mail válido'; 
-            isValid = false; 
-        }
-        if (this.message.trim() === '') { 
-            this.errors.message = true; 
-            this.msgs.message = 'A mensagem não pode ser vazia'; 
-            isValid = false; 
-        }
-        if (!this.terms) { 
-            this.errors.terms = true; 
-            this.msgs.terms = 'Você precisa aceitar os termos'; 
-            isValid = false; 
-        }
+                    if (this.name.trim() === '') { 
+                        this.errors.name = true; 
+                        this.msgs.name = 'O campo nome é obrigatório'; 
+                        isValid = false; 
+                    }
+                    if (!emailRegex.test(this.email)) { 
+                        this.errors.email = true; 
+                        this.msgs.email = 'Digite um e-mail válido'; 
+                        isValid = false; 
+                    }
+                    if (this.message.trim() === '') { 
+                        this.errors.message = true; 
+                        this.msgs.message = 'A mensagem não pode ser vazia'; 
+                        isValid = false; 
+                    }
+                    if (!this.terms) { 
+                        this.errors.terms = true; 
+                        this.msgs.terms = 'Você precisa aceitar os termos'; 
+                        isValid = false; 
+                    }
 
-        if (!isValid) return;
+                    if (!isValid) return;
 
-        this.loading = true;
-        const form = this.$refs.form;
-        
-        fetch('https://formsubmit.co/ajax/contato@sicape.com', { 
-            method: 'POST',
-            body: new FormData(form)
-        })
-        .then(response => {
-            this.loading = false;
-            this.sent = true; 
-            form.reset();
-        })
-        .catch(error => {
-            this.loading = false;
-            alert('Erro ao enviar. Verifique sua conexão.');
-        });
-    }
-}">
+                    this.loading = true;
+                    const form = this.$refs.form;
+                    
+                    fetch('https://formspree.io/f/mwvroadw', { 
+                        method: 'POST',
+                        redirect: 'manual',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: new URLSearchParams(new FormData(form))
+                    })
+                    
+                    .then(response => {
+                        this.loading = false;
+                        this.sent = true; 
+                        form.reset();
+                    })
+                    .catch(error => {
+                        this.loading = false;
+                    });
+                }
+            }">
                 <form x-show="!sent" x-ref="form" @submit.prevent="submitForm()" class="flex flex-col gap-4 w-full">
-                    <input type="hidden" name="_subject" value="Novo contato Site Sicape">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-
                     <div>
                         <label for="name" class="block text-gray-700 mb-1">Nome</label>
                         <input x-model="name" :class="{'border-red-500': errors.name}"
