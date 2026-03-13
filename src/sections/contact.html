@@ -31,8 +31,10 @@
                 terms: false,
                 loading: false,
                 sent: false,
+                error: false,
                 errors: { name: false, email: false, message: false, terms: false },
                 msgs: { name: '', email: '', message: '', terms: '' },
+
                 submitForm() {
                     let isValid = true;
                     this.errors = { name: false, email: false, message: false, terms: false };
@@ -41,11 +43,6 @@
                     if (this.name.trim() === '') { 
                         this.errors.name = true; 
                         this.msgs.name = 'O campo nome é obrigatório'; 
-                        isValid = false; 
-                    }
-                    if (!emailRegex.test(this.email)) { 
-                        this.errors.email = true; 
-                        this.msgs.email = 'Digite um e-mail válido'; 
                         isValid = false; 
                     }
                     if (this.message.trim() === '') { 
@@ -72,18 +69,22 @@
                         },
                         body: new URLSearchParams(new FormData(form))
                     })
-                    
                     .then(response => {
+                        if (response.status == 0) {
+                            this.sent = true; 
+                        } else {
+                            this.error = true;
+                        }
                         this.loading = false;
-                        this.sent = true; 
                         form.reset();
                     })
                     .catch(error => {
                         this.loading = false;
+                        this.error = true;
                     });
                 }
             }">
-                <form x-show="!sent" x-ref="form" @submit.prevent="submitForm()" class="flex flex-col gap-4 w-full">
+                <form x-show="!sent && !error" x-ref="form" @submit.prevent="submitForm()" class="flex flex-col gap-4 w-full">
                     <div>
                         <label for="name" class="block text-gray-700 mb-1">Nome</label>
                         <input x-model="name" :class="{'border-red-500': errors.name}"
@@ -136,6 +137,17 @@
                     <p class="text-gray-600 max-w-md">Obrigado pelo contato. Responderemos em breve.</p>
                     <button @click="sent = false" class="text-green-600 font-medium hover:underline mt-6">
                         Enviar outra mensagem
+                    </button>
+                </div>
+
+                <div x-show="error" style="display: none;"
+                    class="flex flex-col items-center justify-start w-full h-full pt-10 text-center space-y-4">
+                    <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mb-2">
+                        <i class="fa fa-times fa-xl text-red-800"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800">Houve uma falha ao enviar o formulário</h3>
+                    <button @click="sent = false; error = false" class="text-green-600 font-medium hover:underline mt-6">
+                        Tentar novamente
                     </button>
                 </div>
             </div>
