@@ -90,7 +90,7 @@
                         <input x-model="name" :class="{'border-red-500': errors.name}"
                             class="bg-transparent w-full border border-zinc-400 h-10 px-4 py-3 rounded-none" id="name"
                             type="text" name="name">
-                        <span x-show="errors.name" x-text="msgs.name" class="text-red-500 text-sm mt-1 block"></span>
+                        <span aria-live="polite" x-show="errors.name" x-text="msgs.name" class="text-red-500 text-sm mt-1 block"></span>
                     </div>
 
                     <div>
@@ -98,7 +98,7 @@
                         <input x-model="email" :class="{'border-red-500': errors.email}"
                             class="bg-transparent w-full border border-zinc-400 h-10 px-4 py-3 rounded-none" id="email"
                             type="email" name="email">
-                        <span x-show="errors.email" x-text="msgs.email" class="text-red-500 text-sm mt-1 block"></span>
+                        <span aria-live="polite" x-show="errors.email" x-text="msgs.email" class="text-red-500 text-sm mt-1 block"></span>
                     </div>
 
                     <div>
@@ -106,7 +106,7 @@
                         <textarea x-model="message" :class="{'border-red-500': errors.message}"
                             class="bg-transparent w-full border border-zinc-400 p-2 h-32 px-4 py-3 rounded-none"
                             id="message" name="message"></textarea>
-                        <span x-show="errors.message" x-text="msgs.message"
+                        <span aria-live="polite" x-show="errors.message" x-text="msgs.message"
                             class="text-red-500 text-sm mt-1 block"></span>
                     </div>
 
@@ -145,7 +145,7 @@
                     <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mb-2">
                         <i class="fa fa-times fa-xl text-red-800"></i>
                     </div>
-                    <h3 class="text-3xl font-bold text-gray-800">Mensagem Enviada!</h3>
+                    <h3 class="text-3xl font-bold text-gray-800">Houve uma falha ao enviar o formulário</h3>
                     <button @click="sent = false; error = false" class="text-green-600 font-medium hover:underline mt-6">
                         Tentar novamente
                     </button>
