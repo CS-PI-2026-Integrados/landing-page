@@ -1,5 +1,5 @@
 <section class="w-full max-w-7xl mx-auto px-6 py-20" x-data="{ 
-        cards: [],
+        cards: { title: '', card: [{}, {}, {}, {}] },
         async loadCards() {
             try {
                 const response = await fetch('src/data/cards.json');
