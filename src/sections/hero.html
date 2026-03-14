@@ -1,11 +1,19 @@
 <section class="bg-black/33 flex bg-blend-multiply bg-[url(assets/img/hero.jpg)] h-dvh bg-cover bg-center" id="hero">
     <div class="container max-w-7xl mx-auto flex">
         <div class="px-4 md:w-[80%] lg:w-[60%] mt-auto flex flex-col text-[var(--light)] gap-4 mb-20">
-            <h1 class="serif text-[3.5em] md:text-[4em] font-medium leading-15 text-shadow-lg/20">Gestão de penas sem papel e sem burocracia</h1>
-            <p class="m-0 text-xl text-shadow-lg/20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. </p>
+            <h1 class="serif text-[3.5em] md:text-[4em] font-medium leading-15 text-shadow-lg/20"
+                x-text="$store.i18n.t('hero.title')"></h1>
+
+            <p class="m-0 text-xl text-shadow-lg/20" x-text="$store.i18n.t('hero.subtitle')"></p>
+
             <div class="flex gap-3">
-                <a href="#about" class=" items-center flex bg-[var(--green)] hover:brightness-90 text-white px-4 py-2 rounded hover:scale-95 transition">Saiba mais</a>
-                <a href="#contact" class="border border-[var(--light)] text-[var(--light)] px-4 py-2 rounded hover:scale-95 hover:brightness-90 transition">Contate-nos</a>
+                <a href="#about"
+                    class="items-center flex bg-[var(--green)] hover:brightness-90 text-white px-4 py-2 rounded hover:scale-95 transition"
+                    x-text="$store.i18n.t('hero.btn_more')"></a>
+
+                <a href="#contact"
+                    class="border border-[var(--light)] text-[var(--light)] px-4 py-2 rounded hover:scale-95 hover:brightness-90 transition"
+                    x-text="$store.i18n.t('hero.btn_contact')"></a>
             </div>
         </div>
     </div>

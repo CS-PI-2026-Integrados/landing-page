@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "title": "SICAPE - Gestão de Penas",
+    "description": "Gestão de penas sem papel e sem burocracia."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Sobre",
+    "faq": "FAQ",
+    "contact": "Contate-nos"
+  },
+  "hero": {
+    "title": "Gestão de penas sem papel e sem burocracia",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+    "btn_more": "Saiba mais",
+    "btn_contact": "Contate-nos"
+  },
+  "about": {
+    "title": "A prova de fraudes, a favor da sua comarca.",
+    "p1": "A gestão de comparecimento e penas alternativas nos fóruns municipais não precisa mais depender de processos manuais lentos e vulneráveis a fraudes.",
+    "p2": "Através da captura fotográfica biométrica integrada em tempo real e da geração instantânea de comprovantes em PDF com fé pública, garantimos a identidade do cumpridor e otimizamos tempo e esforço para você e sua equipe."
+  },
+  "features": {
+    "title": "Tudo que você precisa está aqui.",
+    "cards": [
+      {
+        "title": "Geração de comprovantes instantâneos",
+        "description": "O sistema faz a captura instantânea para anexá-lo aos comprovantes de fé do comparecimento."
+      },
+      {
+        "title": "Gestão de documentos",
+        "description": "Organize e armazene seus documentos de forma segura e sem complicações."
+      },
+      {
+        "title": "Controle de horas e serviços comunitários",
+        "description": "Faça o controle de horas e serviços comunitários."
+      },
+      {
+        "title": "Segurança e rastreabilidade",
+        "description": "Torne o seu sistema mais seguro e a prova de fraudes, com um robusto registro de ações."
+      }
+    ]
+  },
+  "team": {
+    "title": "Compromisso e inovação: conheça nosso time.",
+    "subtitle": "Somos uma equipe dedicada a transformar ideias complexas em soluções digitais simples e eficientes.",
+    "roles": {
+      "po": "Product Owner",
+      "sm": "Scrum Master",
+      "dev": "Developer"
+    }
+  },
+  "faq": {
+    "title": "FAQs",
+    "questions": [
+      {
+        "q": "Como o sistema garante a identidade de quem comparece ao fórum?",
+        "a": "O sistema possui captura fotográfica integrada em tempo real. A foto é vinculada ao CPF do cumpridor com registro de data e hora no momento do atendimento, impedindo fraudes e substituindo o uso inseguro de arquivos avulsos."
+      },
+      {
+        "q": "Os dados dos processos, fotos e cadastros estão seguros?",
+        "a": "Sim. O sistema opera em um ambiente de nuvem criptografado e segue rigorosamente as diretrizes da LGPD. Além disso, conta com um motor de auditoria de logs que registra exatamente quem acessou, alterou ou gerou qualquer documento."
+      },
+      {
+        "q": "Como funciona a emissão dos comprovantes de comparecimento?",
+        "a": "A emissão é 100% automatizada. Ao registrar a presença, o sistema gera instantaneamente um comprovante em PDF contendo o timbre oficial, a foto do momento e os dados processuais. Esse documento fica salvo na nuvem e pode ser impresso ou consultado a qualquer momento."
+      },
+      {
+        "q": "O sistema permite o controle de horas de serviço comunitário?",
+        "a": "Sim. Possuímos um módulo dedicado à gestão de penas alternativas. É possível alocar o indivíduo em instituições parceiras, lançar as horas cumpridas e o sistema calcula automaticamente o saldo restante, emitindo alertas em caso de inadimplência."
+      },
+      {
+        "q": "Minha comarca pode personalizar o sistema com nossa identidade visual?",
+        "a": "Com certeza. A plataforma permite a personalização (White-Label), onde cada fórum ou prefeitura pode configurar seu próprio brasão, logomarca e textos de cabeçalho oficiais para a geração dos documentos."
+      },
+      {
+        "q": "É necessário instalar algum hardware ou aplicativo específico nos computadores do balcão?",
+        "a": "Não. O sistema funciona diretamente no navegador de internet (Web) e utiliza a própria webcam do computador ou a câmera de um tablet/smartphone comum para realizar os registros fotográficos, sem necessidade de plugins complexos."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contate-nos",
+    "form": {
+      "name": "Nome",
+      "email": "E-mail",
+      "message": "Mensagem",
+      "terms": "Eu aceito os termos",
+      "submit": "Enviar",
+      "submitting": "Enviando..."
+    },
+    "errors": {
+      "name": "O campo nome é obrigatório",
+      "email": "Digite um e-mail válido",
+      "message": "A mensagem não pode ser vazia",
+      "terms": "Você precisa aceitar os termos",
+      "network": "Erro ao enviar. Verifique sua conexão."
+    },
+    "success": {
+      "title": "Mensagem Enviada!",
+      "desc": "Obrigado pelo contato. Responderemos em breve.",
+      "btn": "Enviar outra mensagem"
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados."
+  }
+}

@@ -1,12 +1,17 @@
 <div class="container mx-auto min-h-dvh px-4" id="about">
     <div class="grid grid-cols-1 md:grid-cols-2 py-20 gap-[60px]">
-        <h1 class="col-span-1 text-[4em] serif text-[var(--gray)] leading-15">A prova de fraudes, a favor da sua comarca.</h1>
+
+        <h1 class="col-span-1 text-[4em] serif text-[var(--gray)] leading-15" x-text="$store.i18n.t('about.title')">
+        </h1>
+
         <div class="col-span-1 flex flex-col gap-2 text-lg">
-            <p>A gestão de comparecimento e penas alternativas nos fóruns municipais não precisa mais depender de processos manuais lentos e vulneráveis a fraudes.</p>
-            <p> Através da captura fotográfica biométrica integrada em tempo real e da geração instantânea de comprovantes em PDF com fé pública, garantimos a identidade do cumpridor e otimizamos tempo e esforço para você e sua equipe.</p>
+            <p x-text="$store.i18n.t('about.p1')"></p>
+            <p x-text="$store.i18n.t('about.p2')"></p>
         </div>
+
         <div class="col-span-1 md:col-span-2">
             <img class="w-[100%]" src="assets/img/dashboard.png" alt="Captura de tela do dashboard do SICAPE.">
         </div>
+
     </div>
 </div>
