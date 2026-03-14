@@ -1,21 +1,21 @@
 {
-  "title": "Tudo que você precisa está aqui.",
+  "titleKey": "features.title",
   "card": [
     {
-      "title": "Geração de comprovantes instantâneos",
-      "description": "O sistema faz a captura instantânea para anexá-lo aos comprovantes de fé do comparecimento."
+      "icon": "photo_camera",
+      "translationKey": "features.cards.0"
     },
     {
-      "title": "Gestão de documentos",
-      "description": "Organize e armazene seus documentos de forma segura e sem complicações."
+      "icon": "folder_open",
+      "translationKey": "features.cards.1"
     },
     {
-      "title": "Controle de horas e serviços comunitários",
-      "description": "Faça o controle de horas e serviços comunitários."
+      "icon": "update",
+      "translationKey": "features.cards.2"
     },
     {
-      "title": "Segurança e rastreabilidade",
-      "description": "Torne o seu sistema mais seguro e a prova de fraudes, com um robusto registro de ações."
+      "icon": "deployed_code",
+      "translationKey": "features.cards.3"
     }
   ]
 }
