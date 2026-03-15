@@ -1,122 +1,162 @@
-<header id="navbar"
-        x-data="{ menuOpen: false, highContrast: false }"
-        class="z-10 flex-col px-4 py-2 end-0 fixed w-full transition flex duration-500">
+<header
+  id="navbar"
+  x-data="{ menuOpen: false, highContrast: false }"
+  class="z-10 flex-col px-4 py-2 end-0 fixed w-full transition flex duration-500"
+>
+  <div class="flex container mx-auto flex-col gap-2">
+    <div class="flex">
+      <a id="logo" href="#hero" class="text-[var(--green)] flex my-auto text-2xl">
+        <span class="font-bold logo">SIC</span>
+        <span class="font-regular logo">APE</span>
+      </a>
 
-    <div class="flex container mx-auto flex-col gap-2">
-
-        <div class="flex">
-            <a id="logo" href="#hero" class="text-[var(--green)] flex my-auto text-2xl">
-                <span class="font-bold logo">SIC</span>
-                <span class="font-regular logo">APE</span>
-            </a>
-
-            <div class="ms-auto flex gap-2 items-center">
-
-                <div class="gap-2 hidden sm:flex">
-
-                    <div x-data="{ dropOpen: false }"
-                         @mouseenter="dropOpen = true"
-                         @mouseleave="dropOpen = false"
-                         class="relative flex items-center">
-
-                        <button
-                            class="cursor-pointer hover:backdrop-blur-lg hover:bg-neutral-900/50 flex items-center gap-1.5 hover:scale-95 transition rounded-lg px-3 py-2 text-white">
-
-                            <img :src="$store.i18n.locale === 'en'
+      <div class="ms-auto flex gap-2 items-center">
+        <div class="gap-2 hidden sm:flex">
+          <div
+            x-data="{ dropOpen: false }"
+            @mouseenter="dropOpen = true"
+            @mouseleave="dropOpen = false"
+            class="relative flex items-center"
+          >
+            <button
+              class="cursor-pointer hover:backdrop-blur-lg hover:bg-neutral-900/50 flex items-center gap-1.5 hover:scale-95 transition rounded-lg px-3 py-2 text-white"
+            >
+              <img
+                :src="$store.i18n.locale === 'en'
                                 ? 'assets/icon/us.svg'
                                 : ($store.i18n.locale === 'es'
                                 ? 'assets/icon/spain.svg'
                                 : 'assets/icon/brazil.svg')"
-                                class="w-5 h-5 object-cover">
+                class="w-5 h-5 object-cover"
+              />
 
-                            <i class="fa-solid fa-chevron-down text-[10px]"></i>
-                        </button>
+              <i class="fa-solid fa-chevron-down text-[10px]"></i>
+            </button>
 
-                        <div x-show="dropOpen"
-                             x-transition.opacity
-                             class="absolute right-0 top-full mt-1 w-40 rounded-lg bg-neutral-900/90 backdrop-blur-lg border border-neutral-700 shadow-lg overflow-hidden z-50 cursor-pointer">
-
-                            <div class="py-1 flex flex-col ">
-                                <button @click="$store.i18n.setLang('pt')" class="px-4 py-2 flex gap-3 text-white cursor-pointer">
-                                    <img src="assets/icon/brazil.svg" class="w-6 h-6">
-                                    Português
-                                </button>
-
-                                <button @click="$store.i18n.setLang('en')" class="px-4 py-2 flex gap-3 text-white cursor-pointer">
-                                    <img src="assets/icon/us.svg" class="w-6 h-6">
-                                    English
-                                </button>
-
-                                <button @click="$store.i18n.setLang('es')" class="px-4 py-2 flex gap-3 text-white cursor-pointer">
-                                    <img src="assets/icon/spain.svg" class="w-6 h-6">
-                                    Español
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button onclick="changeFontSize(2)"
-                        class="hover:bg-neutral-900/50 rounded-lg px-3 py-2 text-white">A+</button>
-
-                    <button onclick="changeFontSize(-2)"
-                        class="hover:bg-neutral-900/50 rounded-lg px-3 py-2 text-white">A-</button>
-
-                    <button @click="highContrast = !highContrast"
-                        :class="highContrast ? 'bg-neutral-900/50' : ''"
-                        class="hover:bg-neutral-900/50 rounded-lg px-3 py-2 text-white">
-
-                        <i class="fa-solid fa-circle-half-stroke"></i>
-                    </button>
-
-                    <a href="#hero" x-text="$store.i18n.t('nav.home')" class="px-3 py-2 text-white"></a>
-                    <a href="#about" x-text="$store.i18n.t('nav.about')" class="px-3 py-2 text-white"></a>
-                    <a href="#faq" x-text="$store.i18n.t('nav.faq')" class="px-3 py-2 text-white"></a>
-                    <a href="#contact" x-text="$store.i18n.t('nav.contact')" class="bg-[var(--green)] px-3 py-2 rounded-lg text-white"></a>
-                </div>
-
-                <button @click="menuOpen = !menuOpen"
-                        class="sm:hidden text-white px-2 py-1 hover:bg-neutral-900/50 rounded-lg">
-                    <i class="fa fa-bars"></i>
+            <div
+              x-show="dropOpen"
+              x-transition.opacity
+              class="absolute right-0 top-full mt-1 w-40 rounded-lg bg-neutral-900/90 backdrop-blur-lg border border-neutral-700 shadow-lg overflow-hidden z-50 cursor-pointer"
+            >
+              <div class="py-1 flex flex-col">
+                <button
+                  @click="$store.i18n.setLang('pt')"
+                  class="px-4 py-2 flex gap-3 text-white cursor-pointer"
+                >
+                  <img src="assets/icon/brazil.svg" class="w-6 h-6" />
+                  Português
                 </button>
 
+                <button
+                  @click="$store.i18n.setLang('en')"
+                  class="px-4 py-2 flex gap-3 text-white cursor-pointer"
+                >
+                  <img src="assets/icon/us.svg" class="w-6 h-6" />
+                  English
+                </button>
+
+                <button
+                  @click="$store.i18n.setLang('es')"
+                  class="px-4 py-2 flex gap-3 text-white cursor-pointer"
+                >
+                  <img src="assets/icon/spain.svg" class="w-6 h-6" />
+                  Español
+                </button>
+              </div>
             </div>
+          </div>
+
+          <button
+            onclick="changeFontSize(2)"
+            class="hover:bg-neutral-900/50 rounded-lg px-3 py-2 text-white"
+          >
+            A+
+          </button>
+
+          <button
+            onclick="changeFontSize(-2)"
+            class="hover:bg-neutral-900/50 rounded-lg px-3 py-2 text-white"
+          >
+            A-
+          </button>
+
+          <button
+            @click="highContrast = !highContrast"
+            :class="highContrast ? 'bg-neutral-900/50' : ''"
+            class="hover:bg-neutral-900/50 rounded-lg px-3 py-2 text-white"
+          >
+            <i class="fa-solid fa-circle-half-stroke"></i>
+          </button>
+
+          <a href="#hero" x-text="$store.i18n.t('nav.home')" class="px-3 py-2 text-white"></a>
+          <a href="#about" x-text="$store.i18n.t('nav.about')" class="px-3 py-2 text-white"></a>
+          <a href="#faq" x-text="$store.i18n.t('nav.faq')" class="px-3 py-2 text-white"></a>
+          <a
+            href="#contact"
+            x-text="$store.i18n.t('nav.contact')"
+            class="bg-[var(--green)] px-3 py-2 rounded-lg text-white"
+          ></a>
         </div>
 
-        <div x-show="menuOpen"
-             x-transition
-             class="bg-neutral-900/50 p-3 flex flex-col gap-2 rounded-lg text-white backdrop-blur-lg sm:hidden">
-
-            <a href="#hero" x-text="$store.i18n.t('nav.home')" class="block px-2 py-1"></a>
-            <a href="#about" x-text="$store.i18n.t('nav.about')" class="block px-2 py-1"></a>
-            <a href="#faq" x-text="$store.i18n.t('nav.faq')" class="block px-2 py-1"></a>
-            <a href="#contact" x-text="$store.i18n.t('nav.contact')" class="block px-2 py-1 bg-[var(--green)] rounded"></a>
-
-            <hr class="border-neutral-700 my-2">
-
-            <div class="flex justify-between items-center px-2 py-1">
-                
-                <div class="flex gap-3">
-                    <button @click="$store.i18n.setLang('pt')" class="hover:scale-110 transition">
-                        <img src="assets/icon/brazil.svg" class="w-6 h-6">
-                    </button>
-                    <button @click="$store.i18n.setLang('en')" class="hover:scale-110 transition">
-                        <img src="assets/icon/us.svg" class="w-6 h-6">
-                    </button>
-                    <button @click="$store.i18n.setLang('es')" class="hover:scale-110 transition">
-                        <img src="assets/icon/spain.svg" class="w-6 h-6">
-                    </button>
-                </div>
-
-                <div class="flex gap-2">
-                    <button onclick="changeFontSize(2)" class="px-2 py-1 bg-neutral-800 hover:bg-neutral-700 rounded text-sm">A+</button>
-                    <button onclick="changeFontSize(-2)" class="px-2 py-1 bg-neutral-800 hover:bg-neutral-700 rounded text-sm">A-</button>
-                    <button @click="highContrast = !highContrast" class="px-2 py-1 bg-neutral-800 hover:bg-neutral-700 rounded">
-                        <i class="fa-solid fa-circle-half-stroke"></i>
-                    </button>
-                </div>
-                
-            </div>
-        </div>
-
+        <button
+          @click="menuOpen = !menuOpen"
+          class="sm:hidden text-white px-2 py-1 hover:bg-neutral-900/50 rounded-lg"
+        >
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
     </div>
+
+    <div
+      x-show="menuOpen"
+      x-transition
+      class="bg-neutral-900/50 p-3 flex flex-col gap-2 rounded-lg text-white backdrop-blur-lg sm:hidden"
+    >
+      <a href="#hero" x-text="$store.i18n.t('nav.home')" class="block px-2 py-1"></a>
+      <a href="#about" x-text="$store.i18n.t('nav.about')" class="block px-2 py-1"></a>
+      <a href="#faq" x-text="$store.i18n.t('nav.faq')" class="block px-2 py-1"></a>
+      <a
+        href="#contact"
+        x-text="$store.i18n.t('nav.contact')"
+        class="block px-2 py-1 bg-[var(--green)] rounded"
+      ></a>
+
+      <hr class="border-neutral-700 my-2" />
+
+      <div class="flex justify-between items-center px-2 py-1">
+        <div class="flex gap-3">
+          <button @click="$store.i18n.setLang('pt')" class="hover:scale-110 transition">
+            <img src="assets/icon/brazil.svg" class="w-6 h-6" />
+          </button>
+          <button @click="$store.i18n.setLang('en')" class="hover:scale-110 transition">
+            <img src="assets/icon/us.svg" class="w-6 h-6" />
+          </button>
+          <button @click="$store.i18n.setLang('es')" class="hover:scale-110 transition">
+            <img src="assets/icon/spain.svg" class="w-6 h-6" />
+          </button>
+        </div>
+
+        <div class="flex gap-2">
+          <button
+            onclick="changeFontSize(2)"
+            class="px-2 py-1 bg-neutral-800 hover:bg-neutral-700 rounded text-sm"
+          >
+            A+
+          </button>
+          <button
+            onclick="changeFontSize(-2)"
+            class="px-2 py-1 bg-neutral-800 hover:bg-neutral-700 rounded text-sm"
+          >
+            A-
+          </button>
+          <button
+            @click="highContrast = !highContrast"
+            class="px-2 py-1 bg-neutral-800 hover:bg-neutral-700 rounded"
+          >
+            <i class="fa-solid fa-circle-half-stroke"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
