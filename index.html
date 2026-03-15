@@ -17,43 +17,45 @@
     :root {
       font-size: 16px;
     }
+    [x-cloak] {
+      display: none !important;
+    }
   </style>
 </head>
 
 <body>
-<div x-data x-show="$store.i18n.isLoading"
-  class="fixed inset-0 z-50 flex items-center justify-center bg-neutral-900 transition-opacity duration-300">
-  <div class="text-white text-xl font-bold flex flex-col items-center gap-4">
-    <i class="fa-solid fa-circle-notch fa-spin text-4xl text-[var(--green)]"></i>
-    <span>Carregando sistema...</span>
+
+<div x-data x-cloak x-show="!$store.i18n.isLoading" x-transition.opacity.duration.500ms>
+  <div x-data="{ content: '' }"
+    x-init="fetch('src/sections/header.html').then(res => res.text()).then(html => content = html)" x-html="content">
+  </div>
+  
+  <div x-data="{ content: '' }"
+    x-init="fetch('src/sections/hero.html').then(res => res.text()).then(html => content = html)" x-html="content">
+  </div>
+
+  <div class="max-w-7xl w-full mx-auto">
+    <div x-data="{ content: '' }"
+      x-init="fetch('src/sections/about.html').then(res => res.text()).then(html => content = html)" x-html="content">
+    </div>
+    <div x-data="{ content: '' }"
+      x-init="fetch('src/sections/cards.html').then(res => res.text()).then(html => content = html)" x-html="content">
+    </div>
+    <div x-data="{ content: '' }"
+      x-init="fetch('src/sections/faq.html').then(res => res.text()).then(html => content = html)" x-html="content">
+    </div>
+    <div x-data="{ content: '' }"
+      x-init="fetch('src/sections/team.html').then(res => res.text()).then(html => content = html)" x-html="content">
+    </div>
+    <div x-data="{ content: '' }"
+      x-init="fetch('src/sections/contact.html').then(res => res.text()).then(html => content = html)" x-html="content">
+    </div>
+    <div x-data="{ content: '' }"
+      x-init="fetch('src/sections/footer.html').then(res => res.text()).then(html => content = html)" x-html="content">
+    </div>
   </div>
 </div>
 
-<div x-data="{ content: '' }"
-  x-init="fetch('src/sections/header.html').then(res => res.text()).then(html => content = html)" x-html="content">
-</div>
-<div x-data="{ content: '' }"
-  x-init="fetch('src/sections/hero.html').then(res => res.text()).then(html => content = html)" x-html="content"></div>
-
-<div class="max-w-7xl w-full mx-auto">
-  <div x-data="{ content: '' }"
-    x-init="fetch('src/sections/about.html').then(res => res.text()).then(html => content = html)" x-html="content">
-  </div>
-  <div x-data="{ content: '' }"
-    x-init="fetch('src/sections/cards.html').then(res => res.text()).then(html => content = html)" x-html="content">
-  </div>
-  <div x-data="{ content: '' }"
-    x-init="fetch('src/sections/faq.html').then(res => res.text()).then(html => content = html)" x-html="content"></div>
-  <div x-data="{ content: '' }"
-    x-init="fetch('src/sections/team.html').then(res => res.text()).then(html => content = html)" x-html="content">
-  </div>
-  <div x-data="{ content: '' }"
-    x-init="fetch('src/sections/contact.html').then(res => res.text()).then(html => content = html)" x-html="content">
-  </div>
-  <div x-data="{ content: '' }"
-    x-init="fetch('src/sections/footer.html').then(res => res.text()).then(html => content = html)" x-html="content">
-  </div>
-</div>
 </body>
 
 <script>
