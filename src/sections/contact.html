@@ -50,21 +50,29 @@
         this.loading = true;
         const form = this.$refs.form;
         
-        fetch('https://formsubmit.co/ajax/contato@sicape.com', { 
-            method: 'POST',
-            body: new FormData(form)
-        })
-        .then(response => {
-            this.loading = false;
-            this.sent = true; 
-            form.reset();
-        })
-        .catch(err => {
-            this.loading = false;
-            this.error = true;
-        });
-    }
-}"
+     fetch('https://formspree.io/f/mwvroadw', { 
+                        method: 'POST',
+                        redirect: 'manual',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: new URLSearchParams(new FormData(form))
+                    })
+                    .then(response => {
+                        if (response.status == 0) {
+                            this.sent = true; 
+                        } else {
+                            this.error = true;
+                        }
+                        this.loading = false;
+                        form.reset();
+                    })
+                    .catch(error => {
+                        this.loading = false;
+                        this.error = true;
+                    });
+                }
+            }"
       >
         <form
           x-show="!sent && !error"
